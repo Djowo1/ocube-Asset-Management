@@ -1,0 +1,200 @@
+.cascadeContainer {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  overflow: hidden;
+  perspective: 1200px;
+  background: transparent;
+  transition: opacity 1s ease-out;
+}
+
+.settleFade {
+  opacity: 0;
+}
+
+.perspectiveWrap {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.skipBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  pointer-events: auto;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  z-index: 100000;
+  transition: all 0.2s ease;
+}
+
+.skipBtn:hover {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* 3D Cube Dimensions */
+.cubeEntity {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  transform-style: preserve-3d;
+}
+
+.cubeMesh {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: gentleTumble 8s linear infinite;
+}
+
+.heroMesh {
+  width: 56px;
+  height: 56px;
+}
+
+@keyframes gentleTumble {
+  0%   { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  50%  { transform: rotateX(180deg) rotateY(270deg) rotateZ(90deg); }
+  100% { transform: rotateX(360deg) rotateY(540deg) rotateZ(360deg); }
+}
+
+.face {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0088cc;
+  border: 1.5px solid #0088cc;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.2);
+}
+
+.heroMesh .face {
+  width: 56px;
+  height: 56px;
+  background: #0088cc;
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 136, 204, 0.45);
+}
+
+:global([data-theme="dark"]) .face {
+  background: #081120;
+  color: #00b4d8;
+  border-color: #00b4d8;
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.35);
+}
+
+:global([data-theme="dark"]) .heroMesh .face {
+  background: #00b4d8;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.fFront  { transform: translateZ(24px); }
+.fBack   { transform: rotateY(180deg) translateZ(24px); }
+.fRight  { transform: rotateY(90deg) translateZ(24px); }
+.fLeft   { transform: rotateY(-90deg) translateZ(24px); }
+.fTop    { transform: rotateX(90deg) translateZ(24px); }
+.fBottom { transform: rotateX(-90deg) translateZ(24px); }
+
+.heroMesh .fFront  { transform: translateZ(28px); }
+.heroMesh .fBack   { transform: rotateY(180deg) translateZ(28px); }
+.heroMesh .fRight  { transform: rotateY(90deg) translateZ(28px); }
+.heroMesh .fLeft   { transform: rotateY(-90deg) translateZ(28px); }
+.heroMesh .fTop    { transform: rotateX(90deg) translateZ(28px); }
+.heroMesh .fBottom { transform: rotateX(-90deg) translateZ(28px); }
+
+/* Columns Positioning & Natural Fall Rates */
+.cubeCol1 {
+  left: 12vw;
+  top: -90px;
+  animation: naturalDrop1 2.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.cubeCol2 {
+  left: 30vw;
+  top: -120px;
+  animation: naturalDrop2 3.1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+}
+
+.cubeCol3 {
+  left: 48vw;
+  top: -140px;
+  animation: naturalDrop3 3.3s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+}
+
+.cubeCol4 {
+  left: 68vw;
+  top: -110px;
+  animation: naturalDrop4 3.0s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+}
+
+.cubeCol5 {
+  left: 84vw;
+  top: -100px;
+  animation: naturalDrop5 2.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+}
+
+@keyframes naturalDrop1 {
+  0%   { top: -90px; }
+  65%  { top: 78vh; }
+  78%  { top: 66vh; }
+  88%  { top: 78vh; }
+  94%  { top: 74vh; }
+  100% { top: 78vh; }
+}
+
+@keyframes naturalDrop2 {
+  0%   { top: -120px; }
+  65%  { top: 82vh; }
+  78%  { top: 70vh; }
+  88%  { top: 82vh; }
+  94%  { top: 78vh; }
+  100% { top: 82vh; }
+}
+
+@keyframes naturalDrop3 {
+  0%   { top: -140px; }
+  65%  { top: 75vh; }
+  78%  { top: 60vh; }
+  88%  { top: 75vh; }
+  94%  { top: 71vh; }
+  100% { top: 75vh; }
+}
+
+@keyframes naturalDrop4 {
+  0%   { top: -110px; }
+  65%  { top: 80vh; }
+  78%  { top: 68vh; }
+  88%  { top: 80vh; }
+  94%  { top: 76vh; }
+  100% { top: 80vh; }
+}
+
+@keyframes naturalDrop5 {
+  0%   { top: -100px; }
+  65%  { top: 76vh; }
+  78%  { top: 64vh; }
+  88%  { top: 76vh; }
+  94%  { top: 72vh; }
+  100% { top: 76vh; }
+}

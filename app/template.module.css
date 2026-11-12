@@ -1,0 +1,1 @@
+.t{animation:in .7s cubic-bezier(.2,.7,.2,1) both}@keyframes in{from{opacity:0;transform:translateY(16px)}}

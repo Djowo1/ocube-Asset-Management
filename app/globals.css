@@ -1,0 +1,161 @@
+:root {
+  /* LIGHT MODE (White & Blue) */
+  --primary: #0088cc;
+  --primary-hover: #0070a8;
+  --primary-light: #e6f6fc;
+  --primary-glow: rgba(0, 136, 204, 0.25);
+  --secondary: #003459;
+  --accent-gold: #e5a800;
+
+  /* Surfaces: Crisp White & Soft Blue Tints */
+  --bg-main: #ffffff;
+  --bg-section-alt: #f0f7fc;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f8fafc;
+  --bg-dark: #00172e;
+  
+  --text-main: #0a192f;
+  --text-muted: #334e68;
+  --text-light: #627d98;
+  --text-inverse: #ffffff;
+  
+  --border-color: rgba(0, 136, 204, 0.18);
+  --border-hover: rgba(0, 136, 204, 0.55);
+  --shadow-sm: 0 1px 3px rgba(0, 52, 89, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 52, 89, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 52, 89, 0.12);
+
+  --toggle-bg: #e0f2fe;
+}
+
+[data-theme="dark"] {
+  /* DARK MODE (True Black & Electric Blue) */
+  --primary: #00b4d8;
+  --primary-hover: #48cae4;
+  --primary-light: rgba(0, 180, 216, 0.14);
+  --primary-glow: rgba(0, 180, 216, 0.4);
+  --secondary: #001220;
+  --accent-gold: #f6c845;
+  
+  /* Surfaces: Deep Pitch Black & Midnight Blue */
+  --bg-main: #000000;
+  --bg-section-alt: #040914;
+  --bg-card: #081120;
+  --bg-card-subtle: #0d1b2e;
+  --bg-dark: #000000;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+  --text-inverse: #ffffff;
+  
+  --border-color: rgba(0, 180, 216, 0.22);
+  --border-hover: rgba(0, 180, 216, 0.75);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.8);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.9);
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.95);
+
+  --toggle-bg: #030712;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-main);
+  background: var(--bg-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: min(1200px, 100% - 48px);
+  margin-inline: auto;
+}
+
+/* Modern Pill Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  border: 1.5px solid var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px var(--primary-glow);
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-glow);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
+.btn.ghost:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.btn.ghostWhite {
+  background: rgba(255, 255, 255, 0.9);
+  color: #003459;
+  border-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+}
+
+.btn.ghostWhite:hover {
+  background: #ffffff;
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

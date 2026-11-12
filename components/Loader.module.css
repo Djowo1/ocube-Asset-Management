@@ -1,0 +1,119 @@
+.loaderShell {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: #00172e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.loaderFadeOut {
+  opacity: 0;
+  transform: scale(1.02);
+  pointer-events: none;
+}
+
+.centerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem;
+}
+
+/* 3D Micro-Cube */
+.cubeScene {
+  width: 50px;
+  height: 50px;
+  perspective: 400px;
+}
+
+.cube3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateLoaderCube 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes rotateLoaderCube {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  50% { transform: rotateX(180deg) rotateY(180deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.face {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background: rgba(0, 168, 232, 0.85);
+  border: 1.5px solid #38bdf8;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(0, 168, 232, 0.4);
+}
+
+.fFront  { transform: translateZ(25px); }
+.fBack   { transform: rotateY(180deg) translateZ(25px); background: #003459; }
+.fRight  { transform: rotateY(90deg) translateZ(25px); background: #00233e; }
+.fLeft   { transform: rotateY(-90deg) translateZ(25px); background: #00233e; }
+.fTop    { transform: rotateX(90deg) translateZ(25px); background: #f6c845; color: #00172e; }
+.fBottom { transform: rotateX(-90deg) translateZ(25px); background: #00172e; }
+
+.textWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.brandTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+}
+
+.brandO {
+  color: #38bdf8;
+}
+
+.brandCube {
+  color: #ffffff;
+}
+
+.subtext {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.14em;
+}
+
+/* Fast progress bar */
+.progressTrack {
+  width: 140px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressBar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #00a8e8, #38bdf8);
+  animation: loadProgress 0.75s ease-out forwards;
+}
+
+@keyframes loadProgress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}

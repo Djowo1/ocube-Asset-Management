@@ -1,0 +1,99 @@
+.f {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.f label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.86rem;
+  color: var(--text-main);
+  font-weight: 700;
+  min-width: 0;
+}
+
+.f input,
+.f select,
+.f textarea {
+  background: var(--bg-card-subtle);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.f input:focus,
+.f select:focus,
+.f textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.f select option {
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+.w {
+  grid-column: 1 / -1;
+}
+
+.f button {
+  grid-column: 1 / -1;
+  padding: 0.95rem 2rem;
+  font-size: 0.98rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.ok {
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1.5px solid rgba(34, 197, 94, 0.4);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.ok strong {
+  color: #16a34a;
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  font-weight: 800;
+}
+
+:global([data-theme="dark"]) .ok strong {
+  color: #4ade80;
+}
+
+.ok p {
+  color: var(--text-main);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ok code {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .f {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
