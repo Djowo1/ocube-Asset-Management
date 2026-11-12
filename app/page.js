@@ -218,7 +218,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Company About Us, Mission, Vision & Why Choose Us (Aligned with MiniCube) */}
+      {/* 3. Company Overview: Who We Are & What We Stand For */}
       <section id="about" className={s.aboutMissionSection}>
         <div className="wrap">
           <Reveal variant="fadeUp">
@@ -227,7 +227,7 @@ export default function Home() {
                 <MiniCube size={18} />
                 About O.CUBE Asset Management
               </span>
-              <h2>Who We Are & What We Stand For</h2>
+              <h2>Who We Are &amp; What We Stand For</h2>
               <p className={s.leadText}>
                 <strong>O. Cube Asset Management Limited</strong> is a professional asset management services company specializing in <strong>Fixed Asset Verification</strong>, <strong>Asset Tagging</strong>, <strong>Asset Reconciliation</strong>, and <strong>Asset Management Software Solutions</strong>. We help organizations establish accurate asset records, improve accountability, and maximize the value of their investments through technology-driven asset management practices.
               </p>
@@ -237,134 +237,9 @@ export default function Home() {
             </div>
           </Reveal>
 
-          {/* Mission, Vision & Core Values Grid */}
-          <div className={s.missionVisionGrid}>
-            <Reveal variant="slideLeft" delay={50}>
-              <div className={s.mvCard}>
-                <div className={s.cardHeaderWithNumber}>
-                  <span className={s.cardNumber}>01</span>
-                  <span className={s.mvIcon}>🎯</span>
-                </div>
-                <h3>Our Mission</h3>
-                <p>
-                  To provide innovative and reliable asset management solutions that enhance accountability, improve operational efficiency, and support informed business decision-making.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal variant="popIn" delay={120}>
-              <div className={s.mvCard}>
-                <div className={s.cardHeaderWithNumber}>
-                  <span className={s.cardNumber}>02</span>
-                  <span className={s.mvIcon}>🔭</span>
-                </div>
-                <h3>Our Vision</h3>
-                <p>
-                  To become a leading provider of fixed asset management solutions in Africa, recognized for excellence, integrity, and innovation.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal variant="slideRight" delay={190}>
-              <div className={s.mvCard}>
-                <div className={s.cardHeaderWithNumber}>
-                  <span className={s.cardNumber}>03</span>
-                  <span className={s.mvIcon}>💎</span>
-                </div>
-                <h3>Our Core Values</h3>
-                <ul className={s.coreValuesList}>
-                  <li><strong>Integrity:</strong> Uncompromising accuracy and zero tolerance for phantom or unrecorded assets.</li>
-                  <li><strong>Excellence:</strong> Industrial-grade materials (005 anodised aluminium &amp; 3M) engineered for longevity.</li>
-                  <li><strong>Accountability:</strong> Complete physical-to-ledger reconciliation with audit trails.</li>
-                  <li><strong>Innovation:</strong> Seamless integration of QR, RFID, and cloud asset software.</li>
-                </ul>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Why Choose Us Grid */}
-          <Reveal variant="fadeUp" delay={250}>
-            <div className={s.whyChooseUsBox}>
-              <div className={s.whyHeader}>
-                <span className={s.subBadge}>
-                  <MiniCube size={18} />
-                  Our Competitive Edge
-                </span>
-                <h3>Why Choose O. Cube Asset Management?</h3>
-              </div>
-              <div className={s.whyGrid}>
-                <div className={s.whyItem}>
-                  <span className={s.whyCheck}>✓</span>
-                  <span>Accurate and reliable asset verification services</span>
-                </div>
-                <div className={s.whyItem}>
-                  <span className={s.whyCheck}>✓</span>
-                  <span>Professional asset tagging and identification solutions</span>
-                </div>
-                <div className={s.whyItem}>
-                  <span className={s.whyCheck}>✓</span>
-                  <span>Seamless asset register reconciliation (Zero Ghost Assets)</span>
-                </div>
-                <div className={s.whyItem}>
-                  <span className={s.whyCheck}>✓</span>
-                  <span>Technology-driven asset management systems</span>
-                </div>
-                <div className={s.whyItem}>
-                  <span className={s.whyCheck}>✓</span>
-                  <span>Improved compliance and external audit readiness</span>
-                </div>
-                <div className={s.whyItem}>
-                  <span className={s.whyCheck}>✓</span>
-                  <span>Enhanced asset visibility and total executive control</span>
-                </div>
-                <div className={s.whyItem}>
-                  <span className={s.whyCheck}>✓</span>
-                  <span>Experienced and dedicated field professionals</span>
-                </div>
-                <div className={s.whyItem}>
-                  <span className={s.whyCheck}>✓</span>
-                  <span>Customized solutions tailored to client needs</span>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 4. Professional 3D Geometric Brand Section */}
-      <section id="interactive-cube" className={s.cubeFeatureSection}>
-        <div className={`wrap ${s.cubeFeatureGrid}`}>
-          <Reveal variant="slideLeft">
-            <div className={s.cubeFeatureCopy}>
-              <span className={s.subBadge}>
-                <MiniCube size={18} />
-                The O.CUBE Architecture
-              </span>
-              <h2>Total Visibility. Engineered Geometry. Full Accountability.</h2>
-              <p className={s.leadText}>
-                Just as each face of a cube locks into geometric precision, our asset management framework connects physical field counts, durable barcode/RFID tagging, and software registers into one seamless source of truth.
-              </p>
-              <ul className={s.featureChecklist}>
-                <li><strong>Industrial Materials:</strong> 005 aluminium plates, 3M polyester, and silver tamper-void substrates that never peel.</li>
-                <li><strong>Audit Assurance:</strong> Comprehensive line-by-line reconciliation resolving general ledger discrepancies.</li>
-                <li><strong>Connected Systems:</strong> Barcode, QR, and RFID scanning linked directly into our cloud asset platform.</li>
-              </ul>
-              <div className={s.cubeCtas}>
-                <a 
-                  href="https://wa.me/2348055260304?text=Hello%20O.CUBE,%20I%20would%20like%20to%20request%20an%20asset%20audit%20proposal." 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="btn"
-                >
-                  Request Project Proposal ↗
-                </a>
-                <a href="/OCube-Company-Profile.pdf" download className="btn ghost">Download Profile PDF</a>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal variant="slideRight" delay={100}>
-            <div className={s.cubeFeatureVisual}>
+          {/* 3D Rotating Cube Brand Display under About Us */}
+          <Reveal variant="fadeUp" delay={120}>
+            <div className={s.aboutCubeVisual}>
               <div className={s.cubeDisplayPlate}>
                 <CubeAnimation size={200} />
                 <div className={s.cubeStatsMini}>
@@ -379,7 +254,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Core Services Grid with High-Quality Card Photos & Clean Typography */}
+      {/* 4. Core Services Grid with High-Quality Card Photos & Clean Typography */}
       <section id="services" className={s.servicesSection}>
         <div className="wrap">
           <Reveal variant="fadeUp">
@@ -490,7 +365,156 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. 4-Step End-to-End Methodology */}
+      {/* 8. Mission, Vision, Core Values & Why Choose Us (Moved after Verified Field Deployments) */}
+      <section id="values" className={s.valuesSection}>
+        <div className="wrap">
+          <Reveal variant="fadeUp">
+            <div className={s.secHeaderCenter}>
+              <span className={s.subBadge}>
+                <MiniCube size={18} />
+                Guiding Principles
+              </span>
+              <h2>Our Mission, Vision &amp; Core Values</h2>
+              <p className={s.leadText}>
+                The fundamental principles that guide O. Cube Asset Management in providing trusted, enterprise-grade verification across Africa.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Mission, Vision & Core Values Grid */}
+          <div className={s.missionVisionGrid}>
+            <Reveal variant="slideLeft" delay={50}>
+              <div className={s.mvCard}>
+                <div className={s.cardHeaderWithNumber}>
+                  <span className={s.cardNumber}>01</span>
+                  <span className={s.mvIcon}>🎯</span>
+                </div>
+                <h3>Our Mission</h3>
+                <p>
+                  To provide innovative and reliable asset management solutions that enhance accountability, improve operational efficiency, and support informed business decision-making.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal variant="popIn" delay={120}>
+              <div className={s.mvCard}>
+                <div className={s.cardHeaderWithNumber}>
+                  <span className={s.cardNumber}>02</span>
+                  <span className={s.mvIcon}>🔭</span>
+                </div>
+                <h3>Our Vision</h3>
+                <p>
+                  To become a leading provider of fixed asset management solutions in Africa, recognized for excellence, integrity, and innovation.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal variant="slideRight" delay={190}>
+              <div className={s.mvCard}>
+                <div className={s.cardHeaderWithNumber}>
+                  <span className={s.cardNumber}>03</span>
+                  <span className={s.mvIcon}>💎</span>
+                </div>
+                <h3>Our Core Values</h3>
+                <ul className={s.coreValuesList}>
+                  <li><strong>Integrity:</strong> Uncompromising accuracy and zero tolerance for phantom or unrecorded assets.</li>
+                  <li><strong>Excellence:</strong> Industrial-grade materials (005 anodised aluminium &amp; 3M) engineered for longevity.</li>
+                  <li><strong>Accountability:</strong> Complete physical-to-ledger reconciliation with audit trails.</li>
+                  <li><strong>Innovation:</strong> Seamless integration of QR, RFID, and cloud asset software.</li>
+                </ul>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Why Choose Us Grid */}
+          <Reveal variant="fadeUp" delay={200}>
+            <div className={s.whyChooseUsBox}>
+              <div className={s.whyHeader}>
+                <span className={s.subBadge}>
+                  <MiniCube size={18} />
+                  Our Competitive Edge
+                </span>
+                <h3>Why Choose O. Cube Asset Management?</h3>
+              </div>
+              <div className={s.whyGrid}>
+                <div className={s.whyItem}>
+                  <span className={s.whyCheck}>✓</span>
+                  <span>Accurate and reliable asset verification services</span>
+                </div>
+                <div className={s.whyItem}>
+                  <span className={s.whyCheck}>✓</span>
+                  <span>Professional asset tagging and identification solutions</span>
+                </div>
+                <div className={s.whyItem}>
+                  <span className={s.whyCheck}>✓</span>
+                  <span>Seamless asset register reconciliation (Zero Ghost Assets)</span>
+                </div>
+                <div className={s.whyItem}>
+                  <span className={s.whyCheck}>✓</span>
+                  <span>Technology-driven asset management systems</span>
+                </div>
+                <div className={s.whyItem}>
+                  <span className={s.whyCheck}>✓</span>
+                  <span>Improved compliance and external audit readiness</span>
+                </div>
+                <div className={s.whyItem}>
+                  <span className={s.whyCheck}>✓</span>
+                  <span>Enhanced asset visibility and total executive control</span>
+                </div>
+                <div className={s.whyItem}>
+                  <span className={s.whyCheck}>✓</span>
+                  <span>Experienced and dedicated field professionals</span>
+                </div>
+                <div className={s.whyItem}>
+                  <span className={s.whyCheck}>✓</span>
+                  <span>Customized solutions tailored to client needs</span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 8. The O.CUBE Architecture: Total Visibility, Engineered Geometry & Full Accountability */}
+      <section id="architecture" className={s.cubeFeatureSection}>
+        <div className="wrap">
+          <Reveal variant="fadeUp">
+            <div className={s.secHeaderCenter}>
+              <span className={s.subBadge}>
+                <MiniCube size={18} />
+                The O.CUBE Architecture
+              </span>
+              <h2>Total Visibility. Engineered Geometry. Full Accountability.</h2>
+              <p className={s.leadText}>
+                Just as each face of a cube locks into geometric precision, our asset management framework connects physical field counts, durable barcode/RFID tagging, and software registers into one seamless source of truth.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal variant="fadeUp" delay={100}>
+            <div className={s.architectureBox}>
+              <ul className={s.featureChecklist}>
+                <li><strong>Industrial Materials:</strong> 005 aluminium plates, 3M polyester, and silver tamper-void substrates that never peel.</li>
+                <li><strong>Audit Assurance:</strong> Comprehensive line-by-line reconciliation resolving general ledger discrepancies.</li>
+                <li><strong>Connected Systems:</strong> Barcode, QR, and RFID scanning linked directly into our cloud asset platform.</li>
+              </ul>
+              <div className={s.cubeCtas}>
+                <a 
+                  href="https://wa.me/2348055260304?text=Hello%20O.CUBE,%20I%20would%20like%20to%20request%20an%20asset%20audit%20proposal." 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn"
+                >
+                  Request Project Proposal ↗
+                </a>
+                <a href="/OCube-Company-Profile.pdf" download className="btn ghost">Download Profile PDF</a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 9. 4-Step End-to-End Methodology */}
       <section id="process" className={s.processSection}>
         <div className="wrap">
           <Reveal variant="fadeUp">
