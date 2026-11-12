@@ -1,12 +1,30 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import styles from "./InteractiveCarousel.module.css";
 
 export default function InteractiveCarousel({ title, subtitle, items = [], isTagGallery = false }) {
   const [selectedTag, setSelectedTag] = useState(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const scrollRef = useRef(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selectedTag) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedTag]);
 
   // Manual scroll buttons
   function scroll(direction) {
@@ -107,17 +125,34 @@ export default function InteractiveCarousel({ title, subtitle, items = [], isTag
                 </p>
               )}
               {item.desc && <p className={styles.cardDesc}>{item.desc}</p>}
-              <span className={styles.zoomHint}>
-                {isTagGallery ? "Click to Inspect Tag ↗" : "Click to View Details ↗"}
-              </span>
+              
+              <div className={styles.cardActions}>
+                <a
+                  href={`https://wa.me/2348055260304?text=Hello%20O.CUBE,%20I%20would%20like%20to%20inquire%20about%20your%20${encodeURIComponent(item.title || "asset specification")}${item.material ? `%20(${encodeURIComponent(item.material)})` : ""}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.inquireBtn}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Inquire on WhatsApp ↗
+                </a>
+                <span className={styles.zoomHint}>
+                  {isTagGallery ? "Inspect ↗" : "Details ↗"}
+                </span>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Premium Lightbox Modal for Full-Resolution Inspection */}
-      {selectedTag && (
-        <div className={styles.modalBackdrop} onClick={() => setSelectedTag(null)}>
+      {/* Premium Lightbox Modal Portal for Full-Resolution Inspection */}
+      {selectedTag && mounted && typeof document !== "undefined" && createPortal(
+        <div 
+          className={styles.modalBackdrop} 
+          onClick={() => setSelectedTag(null)}
+          role="dialog"
+          aria-modal="true"
+        >
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <button
               className={styles.closeBtn}
@@ -133,6 +168,7 @@ export default function InteractiveCarousel({ title, subtitle, items = [], isTag
                 width={800}
                 height={550}
                 className={styles.modalImage}
+                priority
               />
             </div>
             <div className={styles.modalInfo}>
@@ -149,17 +185,18 @@ export default function InteractiveCarousel({ title, subtitle, items = [], isTag
               {selectedTag.desc && <p className={styles.modalDesc}>{selectedTag.desc}</p>}
               <div className={styles.modalCtaRow}>
                 <a
-                  href={`https://wa.me/2348055260304?text=Hello%20O.CUBE,%20I%20am%20inquiring%20about:%20${encodeURIComponent(selectedTag.title)}`}
+                  href={`https://wa.me/2348055260304?text=Hello%20O.CUBE,%20I%20would%20like%20to%20inquire%20about%20your%20${encodeURIComponent(selectedTag.title || "asset specification")}${selectedTag.material ? `%20(${encodeURIComponent(selectedTag.material)})` : ""}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn"
+                  className={`btn ${styles.modalInquireBtn}`}
                 >
                   Inquire About This Specification on WhatsApp ↗
                 </a>
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
